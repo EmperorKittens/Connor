@@ -1,0 +1,48 @@
+
+
+def is_crit_balanced(temperature, neutrons_emitted ):
+    if temperature <= 800:
+        return True
+
+    elif neutrons_emitted >= 500:
+        return True
+        
+    elif temperature * neutrons_emitted > 5000000:
+        return True
+    else:
+        return False
+
+def generated_pow(voltage, current):
+    return voltage * current
+
+def percent_efficient( x , y,  theoretical_max_pow):
+    return (generated_pow(x,y) / theoretical_max_pow) * 100
+
+def reactor_efficiency(voltage, current, theoretical_max_pow):
+    result = percent_efficient(voltage, current, theoretical_max_pow)
+    if result >= 80:
+        return "Green"
+    elif result <= 80 and result >= 60:
+        return "Orange"
+    elif result <= 60 and result >= 30:
+        return "Red"
+    else:
+        return "black"
+
+
+def percent_threshold(tmp, neutrons_prod_per_second, threshold):
+    return (tmp * neutrons_prod_per_second) / threshold * 100
+    
+def fail_safe(tmp, neutrons_prod_per_second, threshold):
+    result = percent_threshold(tmp, neutrons_prod_per_second, threshold)
+    if result < 90:
+        return "Low"
+    elif result >= 90 and result <= 110:
+        return "Normal"
+    else:
+        return "Danger"
+
+        
+
+        
+
