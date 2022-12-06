@@ -5,7 +5,6 @@ def conversionl(output):
     return number
 def conversionu(output):
     number = ord(output) - 65 + 27
-    print(number)
     return number
     
 
