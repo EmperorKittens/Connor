@@ -1,0 +1,72 @@
+#left side is opponent, right is me
+#A is rock, B is paper, C is scissors
+#X is rock, Y is paper, Z is scissors
+#choosing rock gets 1 point, 2 for paper, 3 for scissors
+#6 points for winning
+#rock beats scissors, paper beats rock, scissors beats paper same is tie
+
+
+
+#make functions to get strings out of arrays
+opp =''
+me =''
+
+#def main(line,x, totalm):
+
+   # sline = line.strip()
+    #me = str(sline[2])
+   # print(me)
+    #opp = [0]
+
+    #if me == 'X':
+       # x + 1
+   # elif me == 'Y':
+      #  x + 2
+    #elif me == 'Z':
+      #  x + 3
+   # totalm = totalm + x
+    #eturn totalm
+    
+
+    
+
+with open('import.txt') as file:
+    totalm = 0
+    x = 0
+    for line in file.readlines():
+        #reset x
+        x = 0
+        #make functions to get strings out of arrays
+        sline = line.strip()
+        me = str(sline[2])
+        opp = str(sline[0])
+        #if my string equals rock (X) plus 1, if it equals paper (Y) plus 2, if scissors (Z) plus 3 
+        if me == 'X':
+            x = x + 1
+        elif me == 'Y':
+            x = x + 2
+        elif me == 'Z':
+            x = x + 3
+        #logic for all wins
+        if opp == 'A' and me =='Y':
+            x = x + 6
+        elif opp == 'B' and me == 'Z':
+            x = x + 6
+        elif opp == 'C' and me =='X':
+            x = x + 6
+        #draws
+        if opp == 'A' and me == 'X':
+            x = x + 3
+        elif opp == 'B' and me =='Y':
+            x = x + 3
+        elif opp == 'C' and me == 'Z':
+            x = x + 3
+        print(totalm)
+        totalm = totalm + x
+        #logic for rock, paper, scissors
+        
+
+
+#read text file, include total variable for addition
+print(totalm)
+
