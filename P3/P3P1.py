@@ -5,6 +5,7 @@ def conversionl(output):
     return number
 def conversionu(output):
     number = ord(output) - 65 + 27
+    print(number)
     return number
     
 
@@ -21,6 +22,7 @@ with open('Import.txt') as file:
         #compare for like letters (case sensitive)
         compare = str(set(firsth) & set(secondh))
         output = compare.strip()
+        print(output)
         if output.islower():
             x = conversionl(output[2])
         else:
