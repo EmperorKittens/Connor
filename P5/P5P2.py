@@ -14,11 +14,10 @@ def move(moveint,onint,toint):
     #first things first sub 1 off onint and toint because of array indexing
     onint = int(onint -1)
     toint = int (toint -1)
-    n = moveint
-    while n != 0:
-        main[toint].insert(0,main[onint][0])
-        main[onint].pop(0)
-        n = n - 1
+    temp = main[onint][0:moveint]
+    main[toint] = temp + main[toint]
+    del main[onint][0:moveint]
+    
 
 
  
@@ -77,7 +76,9 @@ with open('import.txt') as file:
 
 
 
+
 print(main)
 
         
+
 
